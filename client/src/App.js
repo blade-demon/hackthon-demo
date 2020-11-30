@@ -39,9 +39,9 @@ function App() {
             <div className="player-detail">智能语音版</div>
             <div className="player-time">约3分钟</div>
 
-            <video ref={audioRef} style={{ display: "none" }}>
+            <audio ref={audioRef} style={{ display: "none" }}>
               <source src={audio} type="audio/mpeg" />
-            </video>
+            </audio>
           </div>
           <article>
             今天盘前媒体报道，苹果将欧菲光踢出供应链名单，据悉，此前苹果IPAD低价版由欧菲光、GIS、TPK三家一起供应触控模组，三家的供货比重差不多。
