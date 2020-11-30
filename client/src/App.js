@@ -1,11 +1,13 @@
 import { useRef } from "react";
 import LJSLogo from "./ljs.jpeg";
 import StockImg from "./stock.jpg";
+import PlayImg from "./play.png";
 import audio from "./demo.mp3";
 import "./App.css";
 
 function App() {
   const audioRef = useRef(null);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,25 +28,18 @@ function App() {
       <main>
         <div className="article-content">
           <div className="audio-container">
-            <div className="player-container">
-              <div className="playpause">
-                <input
-                  type="checkbox"
-                  value="None"
-                  id="playpause"
-                  className="check"
-                  onClick={() => {
-                    // audioRef.play();
-                    console.log(audioRef.current);
-                  }}
-                />
-                <label htmlFor="playpause"></label>
-              </div>
+            <div
+              className="player-container"
+              onClick={() => {
+                audioRef.current.play();
+              }}
+            >
+              <img className="playIcon" src={PlayImg} />
             </div>
             <div className="player-detail">智能语音版</div>
             <div className="player-time">约3分钟</div>
 
-            <video ref={audioRef}>
+            <video ref={audioRef} style={{ display: "none" }}>
               <source src={audio} type="audio/mpeg" />
             </video>
           </div>
